@@ -6,53 +6,40 @@ public class PlayerMovement : MonoBehaviour
 {
     public int moveSpeed;
     public int jumpForce;
-    bool jumping = false;
+    bool isJumping = false;
 
-    // Start is called before the first frame update
+    public Rigidbody2D rb2D;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
         gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
         if(Input.GetAxis("Horizontal") < 1.0f)
         {
-            gameObject.transform.position += new Vector3(0, 0, 0);
+            //gameObject.transform.position += new Vector3(0, 0, 0);
+            
         }
-        
-        
-        if (gameObject.GetComponent<Rigidbody2D>() && Input.GetAxis("Vertical") > 0.0f && !jumping)
+
+        if (gameObject.GetComponent<Rigidbody2D>() && Input.GetAxis("Vertical") > 0.0f && !isJumping)
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
-            jumping = true;
+            isJumping = true;
         }
-        
-        
-
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        jumping = false;
-
-        
-    }
+    private void OnCollisionEnter2D(Collision2D collision) { isJumping = false; }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Untagged")
-        {
-
-        }
+        if (collision.gameObject.tag == "Untagged") { }
         else if (collision.gameObject.tag != gameObject.tag)
-        {
-            
+        {       
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }

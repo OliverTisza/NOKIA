@@ -7,14 +7,14 @@ public class PlatformToggler : MonoBehaviour
 
     GameObject[] whitePlatforms;
     GameObject[] blackPlatforms;
-    // Start is called before the first frame update
+   
     void Start()
     {
         whitePlatforms = GameObject.FindGameObjectsWithTag("White");
         blackPlatforms = GameObject.FindGameObjectsWithTag("Black");
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
@@ -31,7 +31,7 @@ public class PlatformToggler : MonoBehaviour
             {
                 platform.GetComponent<BoxCollider2D>().enabled = !platform.GetComponent<BoxCollider2D>().enabled;
                 platform.GetComponent<SpriteRenderer>().enabled = !platform.GetComponent<SpriteRenderer>().enabled;
-                //platform.tag = "Black";
+                
             }
             
         }
@@ -42,14 +42,11 @@ public class PlatformToggler : MonoBehaviour
             {
                 platform.GetComponent<BoxCollider2D>().enabled = !platform.GetComponent<BoxCollider2D>().enabled;
                 platform.GetComponent<SpriteRenderer>().enabled = !platform.GetComponent<SpriteRenderer>().enabled;
-                //platform.tag = "White";
+                
             }
                 
         }
 
-        /*
-        whitePlatforms = GameObject.FindGameObjectsWithTag("White");
-        blackPlatforms = GameObject.FindGameObjectsWithTag("Black");
-        */
+       
     }
 }
