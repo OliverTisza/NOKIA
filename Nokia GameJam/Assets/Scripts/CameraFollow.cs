@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
 
+    public Transform player;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,14 +15,16 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, player.transform.position.y, gameObject.transform.position.z);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //MOVE CAMERA ON Y AXIS
+        /*
         if (collision.name.Contains("Player") && collision.GetComponent<Rigidbody2D>().velocity.y > 0.0f)
         {
-            //MOVE CAMERA ON Y AXIS
+            
 
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 24, gameObject.transform.position.z);
         }
@@ -29,6 +32,8 @@ public class CameraFollow : MonoBehaviour
         {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 24, gameObject.transform.position.z);
         }
+        */
+
 
 
     }
