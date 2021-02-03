@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        if (gameObject.GetComponent<Rigidbody2D>() && Input.GetAxis("Vertical") > 0.0f && !isJumping)
+        if (gameObject.GetComponent<Rigidbody2D>() && Input.GetAxis("Vertical") > 0.0f && !isJumping && rb2D.velocity.y <=0)
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
             isJumping = true;

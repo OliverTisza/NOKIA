@@ -15,7 +15,13 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameObject.transform.position.y > 0)
+        {
+            
+        }
+
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, player.transform.position.y, gameObject.transform.position.z);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
