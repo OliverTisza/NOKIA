@@ -27,7 +27,7 @@ public class PlatformToggler : MonoBehaviour
     {
         foreach (var platform in whitePlatforms)
         {
-            if (platform.GetComponent<SpriteRenderer>())
+            if (!platform.name.Contains("Player"))
             {
                 platform.GetComponent<BoxCollider2D>().enabled = !platform.GetComponent<BoxCollider2D>().enabled;
                 platform.GetComponent<SpriteRenderer>().enabled = !platform.GetComponent<SpriteRenderer>().enabled;
@@ -38,7 +38,7 @@ public class PlatformToggler : MonoBehaviour
 
         foreach (var platform in blackPlatforms)
         {
-            if (platform.GetComponent<SpriteRenderer>())
+            if (!platform.name.Contains("Player"))
             {
                 platform.GetComponent<BoxCollider2D>().enabled = !platform.GetComponent<BoxCollider2D>().enabled;
                 platform.GetComponent<SpriteRenderer>().enabled = !platform.GetComponent<SpriteRenderer>().enabled;

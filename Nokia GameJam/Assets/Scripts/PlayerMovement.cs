@@ -33,15 +33,24 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) { isJumping = false; }
+    private void OnCollisionEnter2D(Collision2D collision) {
+
+        if (collision.gameObject.tag.Equals(gameObject.tag) || collision.gameObject.tag.Equals("Ground"))
+        {
+            isJumping = false;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Untagged") { }
+        if (collision.gameObject.tag == "Untagged" || collision.gameObject.tag == "Ground") { }
         else if (collision.gameObject.tag != gameObject.tag)
         {       
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
+
+        
+
     }
 
 
