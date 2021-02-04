@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
@@ -54,6 +55,7 @@ public class MainMenu : MonoBehaviour
                 case 13:
 
                     Debug.Log("Start level 1");
+                    SceneManager.LoadScene("Level1");
                     break;
 
                 case 0:

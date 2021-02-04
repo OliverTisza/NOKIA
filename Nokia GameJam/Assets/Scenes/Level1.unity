@@ -2692,6 +2692,7 @@ MonoBehaviour:
   moveSpeed: 50
   jumpForce: 5000
   isFinished: 0
+  oppositeTag: White
   rb2D: {fileID: 1444969029}
 --- !u!61 &1444969027
 BoxCollider2D:
@@ -3632,6 +3633,7 @@ MonoBehaviour:
   moveSpeed: 50
   jumpForce: 5000
   isFinished: 0
+  oppositeTag: Black
   rb2D: {fileID: 1920576345}
 --- !u!50 &1920576345
 Rigidbody2D:
