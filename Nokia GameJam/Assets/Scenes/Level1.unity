@@ -907,6 +907,7 @@ MonoBehaviour:
   blackPlayer: {fileID: 1444969024}
   whitePlayer: {fileID: 1920576342}
   win: {fileID: 1275597874}
+  waitingTimeBeforeLoadNextScene: 3
 --- !u!4 &509903790
 Transform:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlatformToggler : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlatformToggler : MonoBehaviour
     public GameObject whitePlayer;
 
     public GameObject win;
+
+    [SerializeField] private float waitingTimeBeforeLoadNextScene;
 
     void Start()
     {
@@ -40,10 +43,17 @@ public class PlatformToggler : MonoBehaviour
     void LevelComplete()
     {
         win.SetActive(true);
-        /* 
-         * Wait x seconds
-         * Transition to next level (maybe with parameter?)
-        */
+        StartCoroutine(LoadNextScene(waitingTimeBeforeLoadNextScene));
+    }
+
+    private IEnumerator LoadNextScene(float timeToWait)
+    {
+        yield return new WaitForSeconds(timeToWait);
+        win.SetActive(false);
+
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(++currentSceneIndex);
+
     }
 
     void TogglePlatforms()
