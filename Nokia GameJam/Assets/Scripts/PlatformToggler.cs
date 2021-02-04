@@ -7,7 +7,10 @@ public class PlatformToggler : MonoBehaviour
 
     GameObject[] whitePlatforms;
     GameObject[] blackPlatforms;
-   
+
+    public GameObject blackPlayer;
+    public GameObject whitePlayer;
+
     void Start()
     {
         whitePlatforms = GameObject.FindGameObjectsWithTag("White");
@@ -21,6 +24,12 @@ public class PlatformToggler : MonoBehaviour
         {
             TogglePlatforms();
         }
+
+        if( blackPlayer.GetComponent<PlayerMovement>().isFinished && whitePlayer.GetComponent<PlayerMovement>().isFinished)
+        {
+            Debug.Log("You are win!");
+        }
+
     }
 
     void TogglePlatforms()

@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public int moveSpeed;
     public int jumpForce;
     bool isJumping = false;
+    public bool isFinished = false;
 
     public Rigidbody2D rb2D;
 
@@ -49,9 +50,23 @@ public class PlayerMovement : MonoBehaviour
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 
+        if (collision.gameObject.tag == "Goal")
+        {
+            isFinished = true;
+        }
+
         
 
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            isFinished = false;
+        }
+
+        
+    }
 
 }
