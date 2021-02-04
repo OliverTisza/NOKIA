@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlatformToggler : MonoBehaviour
 {
@@ -11,10 +12,13 @@ public class PlatformToggler : MonoBehaviour
     public GameObject blackPlayer;
     public GameObject whitePlayer;
 
+    public GameObject win;
+
     void Start()
     {
         whitePlatforms = GameObject.FindGameObjectsWithTag("White");
         blackPlatforms = GameObject.FindGameObjectsWithTag("Black");
+        win.SetActive(false);
     }
 
     
@@ -28,6 +32,7 @@ public class PlatformToggler : MonoBehaviour
         if( blackPlayer.GetComponent<PlayerMovement>().isFinished && whitePlayer.GetComponent<PlayerMovement>().isFinished)
         {
             Debug.Log("You are win!");
+            win.SetActive(true);
         }
 
     }
