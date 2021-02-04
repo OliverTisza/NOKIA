@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public int jumpForce;
     bool isJumping = false;
     public bool isFinished = false;
+    public string oppositeTag;
 
     public Rigidbody2D rb2D;
 
@@ -18,11 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+       
         gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
-        if(Input.GetAxis("Horizontal") < 1.0f)
+        if (Input.GetAxis("Horizontal") < 1.0f)
         {
-            //gameObject.transform.position += new Vector3(0, 0, 0);
+            //TODO: Instant Stop?
             
         }
 
@@ -36,7 +37,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
 
-        if (collision.gameObject.tag.Equals(gameObject.tag) || collision.gameObject.tag.Equals("Ground"))
+
+        Debug.Log(collision.gameObject.GetComponentInParent<Transform>().rotation.eulerAngles.z);
+
+        if (collision.gameObject.tag.Equals(gameObject.tag) && collision.gameObject.GetComponentInParent<Transform>().rotation.eulerAngles.z != 90 || collision.gameObject.tag.Equals("Ground"))
         {
             isJumping = false;
         }
@@ -44,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Untagged" || collision.gameObject.tag == "Ground") { }
-        else if (collision.gameObject.tag != gameObject.tag)
+        
+        if (collision.gameObject.tag.Equals(oppositeTag))
         {       
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
@@ -61,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+
+        Debug.Log(collision.tag);
         if (collision.gameObject.tag == "Goal")
         {
             isFinished = false;

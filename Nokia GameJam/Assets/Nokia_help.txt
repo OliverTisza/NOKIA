@@ -11,3 +11,9 @@ X: 11
 
 Medium jumps:
 (+34,+7)
+
+
+
+BUGS: 
+Player removes collider from OTHER map
+Display/movement not perfect, there is a difference in position but it's not showing

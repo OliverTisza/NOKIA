@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PlatformToggler : MonoBehaviour
 {
 
-    GameObject[] whitePlatforms;
-    GameObject[] blackPlatforms;
+    GameObject[] groupOnePlatforms;
+    GameObject[] groupTwoPlatforms;
 
     public GameObject blackPlayer;
     public GameObject whitePlayer;
@@ -16,8 +16,8 @@ public class PlatformToggler : MonoBehaviour
 
     void Start()
     {
-        whitePlatforms = GameObject.FindGameObjectsWithTag("White");
-        blackPlatforms = GameObject.FindGameObjectsWithTag("Black");
+        groupOnePlatforms = GameObject.FindGameObjectsWithTag("White");
+        groupTwoPlatforms = GameObject.FindGameObjectsWithTag("Black");
         win.SetActive(false);
     }
 
@@ -31,15 +31,24 @@ public class PlatformToggler : MonoBehaviour
 
         if( blackPlayer.GetComponent<PlayerMovement>().isFinished && whitePlayer.GetComponent<PlayerMovement>().isFinished)
         {
-            Debug.Log("You are win!");
-            win.SetActive(true);
+            //Debug.Log("You are win!");
+            LevelComplete();
         }
 
     }
 
+    void LevelComplete()
+    {
+        win.SetActive(true);
+        /* 
+         * Wait x seconds
+         * Transition to next level (maybe with parameter?)
+        */
+    }
+
     void TogglePlatforms()
     {
-        foreach (var platform in whitePlatforms)
+        foreach (var platform in groupOnePlatforms)
         {
             if (!platform.name.Contains("Player"))
             {
@@ -50,7 +59,7 @@ public class PlatformToggler : MonoBehaviour
             
         }
 
-        foreach (var platform in blackPlatforms)
+        foreach (var platform in groupTwoPlatforms)
         {
             if (!platform.name.Contains("Player"))
             {
