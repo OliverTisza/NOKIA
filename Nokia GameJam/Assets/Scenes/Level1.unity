@@ -147,7 +147,7 @@ PrefabInstance:
     - target: {fileID: 6481475393955986268, guid: 7dec9fbaa8c333a4a92e87bec1e1088a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6481475393955986268, guid: 7dec9fbaa8c333a4a92e87bec1e1088a,
         type: 3}
@@ -965,7 +965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &570654278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2199,7 +2199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8963e5ef1bff3b54ab9245b402db8126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSpeed: 30
   jumpForce: 5000
   isFinished: 0
   oppositeTag: White
@@ -2239,7 +2239,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1444969024}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3b1a774eebff8b3448a768eaf0e17e70, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2455,7 +2455,7 @@ PrefabInstance:
     - target: {fileID: 1155718997175544657, guid: 402c3429c5984c24894afa453217b73f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1155718997175544657, guid: 402c3429c5984c24894afa453217b73f,
         type: 3}
@@ -3099,7 +3099,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1920576342}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3b1a774eebff8b3448a768eaf0e17e70, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

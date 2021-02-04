@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb2D;
 
+    private float xInput;
+
     void Start()
     {
         
@@ -19,13 +21,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-       
-        gameObject.transform.position += new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
-        if (Input.GetAxis("Horizontal") < 1.0f)
-        {
-            //TODO: Instant Stop?
-            
-        }
+        //gameObject.transform.position += new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
+
+        // We set the velocity of rigidbody instead of handle directly the player's transform position.
+        // This resolves the strange stuff where players try to push the wall
+        xInput = Input.GetAxisRaw("Horizontal");
+        if (xInput == 0)
+            rb2D.velocity = new Vector2(0f, rb2D.velocity.y);
 
         if (gameObject.GetComponent<Rigidbody2D>() && Input.GetAxis("Vertical") > 0.0f && !isJumping && rb2D.velocity.y <=0)
         {
@@ -33,6 +35,12 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        // In general we handle physics in FixedUpdate
+        rb2D.velocity = new Vector2(xInput * moveSpeed, rb2D.velocity.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
