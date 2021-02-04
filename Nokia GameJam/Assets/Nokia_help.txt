@@ -1,0 +1,13 @@
+Widest jump:
+X: +35 
+Y:  +6
+
+Highest jump:
+X: +5
+Y: +13
+
+Smallest gap:
+X: 11
+
+Medium jumps:
+(+34,+7)
