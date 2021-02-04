@@ -71,6 +71,7 @@ public class MainMenu : MonoBehaviour
                     break;
 
                 case -13:
+                    Application.Quit();
                     Debug.Log("Quit");
                     break;
 
