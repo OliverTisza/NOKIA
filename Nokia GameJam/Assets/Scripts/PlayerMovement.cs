@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
        
-        gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
+        gameObject.transform.position += new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
         if (Input.GetAxis("Horizontal") < 1.0f)
         {
             //TODO: Instant Stop?

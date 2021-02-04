@@ -752,9 +752,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8200c3e9f799c0141857161e569966c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1444969025}
   minY: 0
   maxY: 0
-  player: {fileID: 1444969025}
 --- !u!212 &371077632
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1603,9 +1603,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8200c3e9f799c0141857161e569966c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1444969025}
   minY: 0
   maxY: 0
-  player: {fileID: 1444969025}
 --- !u!212 &1163741303
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2631,9 +2631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8200c3e9f799c0141857161e569966c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1444969025}
   minY: 4
   maxY: 70
-  player: {fileID: 1444969025}
 --- !u!81 &1783724467
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2820,9 +2820,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8200c3e9f799c0141857161e569966c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1444969025}
   minY: 0
   maxY: 0
-  player: {fileID: 1444969025}
 --- !u!1 &1898710258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2854,9 +2854,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8200c3e9f799c0141857161e569966c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1920576343}
   minY: 4
   maxY: 70
-  player: {fileID: 1920576343}
 --- !u!81 &1898710262
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3038,7 +3038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8963e5ef1bff3b54ab9245b402db8126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSpeed: 30
   jumpForce: 5000
   isFinished: 0
   oppositeTag: Black
