@@ -11,12 +11,13 @@ public class PlayerMovement : MonoBehaviour
     public string oppositeTag;
 
     public Rigidbody2D rb2D;
+    private AudioSource audioSource;
 
     private float xInput;
 
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
             isJumping = true;
+            audioSource.Play();
         }
 
     }

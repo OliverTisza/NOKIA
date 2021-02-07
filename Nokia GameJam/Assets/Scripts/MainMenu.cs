@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     private int activeIndex = 0;
     private Vector2 highlightedVector = new Vector2(5, -5);
     private Vector2 outlinedVector = new Vector2(3, -3);
+    private AudioSource audioSource;
 
     // 0 - Start
     // 1 - Tutorial
@@ -21,6 +22,8 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         tutorialText.gameObject.SetActive(false); ;
         foreach (var button in buttons)
         {
@@ -52,37 +55,6 @@ public class MainMenu : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Return))
         {
-            /*int case_switch = (int)selector.anchoredPosition.y;
-
-            switch (case_switch)
-            {
-                case 13:
-
-                    Debug.Log("Start level 1");
-                    SceneManager.LoadScene("Level1");
-                    break;
-
-                case 0:
-
-                    Debug.Log("Show Tutorial");
-
-                    tutorialText.gameObject.SetActive(true);
-                    selector.gameObject.SetActive(false);
-                    foreach (var button in buttons)
-                    {
-                        button.gameObject.SetActive(false); ;
-                    }
-                    break;
-
-                case -13:
-                    Application.Quit();
-                    Debug.Log("Quit");
-                    break;
-
-                default:
-                    break;
-            }*/
-
             switch(activeIndex)
             {
                 case 0:
@@ -91,7 +63,7 @@ public class MainMenu : MonoBehaviour
                     break;
                 case 1:
                     Debug.Log("Show Tutorial");
-
+                    audioSource.Play();
                     tutorialText.gameObject.SetActive(true);
                     foreach (var button in buttons)
                     {
@@ -107,6 +79,7 @@ public class MainMenu : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Escape))
         {
+            audioSource.Play();
             tutorialText.gameObject.SetActive(false);
             foreach (var button in buttons)
             {
@@ -121,6 +94,8 @@ public class MainMenu : MonoBehaviour
 
     private void SetButtonsToDefault()
     {
+        audioSource.Play();
+
         foreach(var b in buttons)
         {
             b.GetComponent<Outline>().effectDistance = outlinedVector;

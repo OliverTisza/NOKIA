@@ -14,14 +14,17 @@ public class PlatformToggler : MonoBehaviour
     public GameObject whitePlayer;
 
     public GameObject win;
-
+    public AudioClip winningClip;
+    private AudioSource audioSource;
     [SerializeField] private float waitingTimeBeforeLoadNextScene;
+    private bool hasWon = false;
 
     void Start()
     {
         groupOnePlatforms = GameObject.FindGameObjectsWithTag("White");
         groupTwoPlatforms = GameObject.FindGameObjectsWithTag("Black");
         win.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     
@@ -35,14 +38,18 @@ public class PlatformToggler : MonoBehaviour
         if( blackPlayer.GetComponent<PlayerMovement>().isFinished && whitePlayer.GetComponent<PlayerMovement>().isFinished)
         {
             //Debug.Log("You are win!");
-            LevelComplete();
+            if(!hasWon)
+                LevelComplete();
         }
 
     }
 
     void LevelComplete()
     {
+        hasWon = true;
         win.SetActive(true);
+        audioSource.clip = winningClip;
+        audioSource.Play();
         StartCoroutine(LoadNextScene(waitingTimeBeforeLoadNextScene));
     }
 
