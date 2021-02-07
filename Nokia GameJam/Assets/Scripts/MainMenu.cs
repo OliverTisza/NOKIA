@@ -59,7 +59,7 @@ public class MainMenu : MonoBehaviour
             {
                 case 0:
                     Debug.Log("Start level 1");
-                    SceneManager.LoadScene("Level1");
+                    SceneManager.LoadScene(1);
                     break;
                 case 1:
                     Debug.Log("Show Tutorial");
