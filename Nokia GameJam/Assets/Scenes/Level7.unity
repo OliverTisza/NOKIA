@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  jumpForce: 5000
+  jumpForce: 6000
   isFinished: 0
   oppositeTag: White
   rb2D: {fileID: 283762721}
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  jumpForce: 5000
+  jumpForce: 6000
   isFinished: 0
   oppositeTag: Black
   rb2D: {fileID: 528559555}

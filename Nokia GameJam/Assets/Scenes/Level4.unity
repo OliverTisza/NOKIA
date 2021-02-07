@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  jumpForce: 5000
+  jumpForce: 6000
   isFinished: 0
   oppositeTag: Black
   rb2D: {fileID: 98987750}
@@ -1344,7 +1344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  jumpForce: 5000
+  jumpForce: 6000
   isFinished: 0
   oppositeTag: White
   rb2D: {fileID: 1172682987}
@@ -1583,7 +1583,7 @@ PrefabInstance:
     - target: {fileID: 1041969393562585783, guid: 5eca8bd93f5988b48924f27a1ac00ab0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1041969393562585783, guid: 5eca8bd93f5988b48924f27a1ac00ab0,
         type: 3}
@@ -2174,7 +2174,7 @@ PrefabInstance:
     - target: {fileID: 216158808260345248, guid: 1afae9e1c479b2e44bb792b82c7b9f0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 216158808260345248, guid: 1afae9e1c479b2e44bb792b82c7b9f0e,
         type: 3}
