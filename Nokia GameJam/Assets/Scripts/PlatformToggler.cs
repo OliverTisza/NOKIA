@@ -15,6 +15,7 @@ public class PlatformToggler : MonoBehaviour
 
     public GameObject win;
     public AudioClip winningClip;
+    public AudioClip switchingClip;
     private AudioSource audioSource;
     [SerializeField] private float waitingTimeBeforeLoadNextScene;
     private bool hasWon = false;
@@ -65,6 +66,8 @@ public class PlatformToggler : MonoBehaviour
 
     void TogglePlatforms()
     {
+        audioSource.clip = switchingClip;
+        audioSource.Play();
         foreach (var platform in groupOnePlatforms)
         {
             if (!platform.name.Contains("Player"))

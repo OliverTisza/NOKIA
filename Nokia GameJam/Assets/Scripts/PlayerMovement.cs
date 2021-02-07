@@ -11,14 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public string oppositeTag;
 
     public Rigidbody2D rb2D;
-    private AudioSource audioSource;
 
     private float xInput;
-
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
 
     void Update()
     {
@@ -34,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
             isJumping = true;
-            audioSource.Play();
         }
 
     }
@@ -45,11 +38,8 @@ public class PlayerMovement : MonoBehaviour
         rb2D.velocity = new Vector2(xInput * moveSpeed, rb2D.velocity.y);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-
-
-        Debug.Log(collision.gameObject.GetComponentInParent<Transform>().rotation.eulerAngles.z);
-
+    private void OnCollisionEnter2D(Collision2D collision) 
+    {
         if (collision.gameObject.tag.Equals(gameObject.tag) && collision.gameObject.GetComponentInParent<Transform>().rotation.eulerAngles.z != 90 || collision.gameObject.tag.Equals("Ground"))
         {
             isJumping = false;
@@ -75,14 +65,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-
-        Debug.Log(collision.tag);
         if (collision.gameObject.tag == "Goal")
         {
             isFinished = false;
         }
-
-        
     }
 
 }
