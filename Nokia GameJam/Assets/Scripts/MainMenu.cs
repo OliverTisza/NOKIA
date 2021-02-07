@@ -58,11 +58,9 @@ public class MainMenu : MonoBehaviour
             switch(activeIndex)
             {
                 case 0:
-                    Debug.Log("Start level 1");
                     SceneManager.LoadScene(1);
                     break;
                 case 1:
-                    Debug.Log("Show Tutorial");
                     audioSource.Play();
                     tutorialText.gameObject.SetActive(true);
                     foreach (var button in buttons)
@@ -72,7 +70,6 @@ public class MainMenu : MonoBehaviour
                     break;
                 case 2:
                     Application.Quit();
-                    Debug.Log("Quit");
                     break;
             }
 
